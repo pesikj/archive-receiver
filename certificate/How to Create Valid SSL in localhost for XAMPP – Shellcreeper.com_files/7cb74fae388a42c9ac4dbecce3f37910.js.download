@@ -1,0 +1,3 @@
+jQuery(document).ready(function($){$(".fx-toc-title").append(' <span>[<a href="#" class="fx-toc-toggle">hide</a>]</span>');$(".fx-toc-toggle").click(function(e){e.preventDefault();if('hide'==$(this).text()){$(this).text('show')}else{$(this).text('hide')}
+$(this).parents(".fx-toc").children('.fx-toc-list').slideToggle()})})
+;
