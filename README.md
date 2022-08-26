@@ -4,6 +4,9 @@ Resources:
 * https://www.codementor.io/@aswinmurugesh/deploying-a-django-application-in-windows-with-apache-and-mod_wsgi-uhl2xq09e
 * https://shellcreeper.com/how-to-create-valid-ssl-in-localhost-for-xampp/
 
+
+https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
+
 ## Git installation
 
 1. Download and install [Git](https://git-scm.com/).
@@ -13,20 +16,21 @@ Resources:
 
 ## Python installation
 1. Download and install [Python](https://www.python.org/downloads/).
-2. Create virtual environment in the directory with the cloned project.
-3. Activate virtual environment: `PS C:\web\asvv> .\env\Scripts\activate`
-4. Go to the `asvv` subfolder `(env) PS C:\web\asvv> cd .\asvv\` and install requirements by `pip install -r requirements.txt`.
-5. Run database migration: `(env) PS C:\web\asvv\asvv> python .\manage.py migrate`
-6. Create admin user: `(env) PS C:\web\asvv\asvv> python .\manage.py createsuperuser`
-7. Start `celery` worker: `celery --app "asvv" worker --loglevel=info --pool=solo`
-8. Load data dump into the database: `python manage.py loaddata templates.json`
+2. Create `.env` file.
+3. Create virtual environment in the directory with the cloned project.
+4. Activate virtual environment: `PS C:\web\asvv> .\env\Scripts\activate`
+5. Go to the `huld_archive_receiver` subfolder `(env) PS C:\web\asvv> cd .\asvv\` and install requirements by `pip install -r requirements.txt`.
+6. Run database migration: `python .\manage.py migrate`
+7. Create admin user: `python .\manage.py createsuperuser`
 
 ## Web Server
 
 1. Download and install [XAMPP](https://www.apachefriends.org/index.html).
-1. Create a new environment variable `MOD_WSGI_APACHE_ROOTDIR`: `$env:MOD_WSGI_APACHE_ROOTDIR="C:\xampp\apache"` (the command for PowerShell) and `set MOD_WSGI_APACHE_ROOTDIR=C:/xampp/apache` (the command for the command line)
-1. Install `mod_wsgi` module: `pip install mod_wsgi`
-1. Run the following command: `mod_wsgi-express module-config`
+2. Create a new environment variable `MOD_WSGI_APACHE_ROOTDIR`: `$env:MOD_WSGI_APACHE_ROOTDIR="C:\xampp\apache"` (the command for PowerShell) and `set MOD_WSGI_APACHE_ROOTDIR=C:/xampp/apache` (the command for the command line)
+3. Install `mod_wsgi` module: `pip install mod_wsgi`
+4. Run the following command: `mod_wsgi-express module-config`
+
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86
 
 After running the command, a simillar output should be generated:
 
