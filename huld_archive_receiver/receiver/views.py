@@ -17,9 +17,9 @@ class IndexView(View):
 @method_decorator(csrf_exempt, name='dispatch')
 class ReceiveFileView(View):
     def post(self, request):
-        for file_name, received_file in request.FILES.items():
-            with open(os.path.join(TARGET_FOLDER, file_name), "wb") as file:
+        for filename, received_file in request.FILES.items():
+            with open(os.path.join(TARGET_FOLDER, filename), "wb") as file:
                 file.write(received_file.read())
-                received_file_record = ReceivedFile(file_name=file_name)
+                received_file_record = ReceivedFile(filename=filename)
                 received_file_record.save()
-        return HttpResponse('Saved')
+        return HttpResponse('Saved', status=200)
