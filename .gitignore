@@ -1,3 +1,4 @@
 /venv/
 /.idea/
 /.env
+/huld_archive_receive/db.sqlite3
