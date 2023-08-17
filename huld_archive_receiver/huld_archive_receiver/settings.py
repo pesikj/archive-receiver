@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "receiver.apps.ReceiverConfig"
+    "receiver.apps.ReceiverConfig",
+    'letsencrypt',
 ]
 
 MIDDLEWARE = [

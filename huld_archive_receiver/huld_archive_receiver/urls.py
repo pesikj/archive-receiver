@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import include, path
+from django.urls import include, path, re_path
 
 from huld_archive_receiver.settings import AUTH_URL_SECRET
 
 urlpatterns = [
     path("", include("receiver.urls")),
     path(f"{AUTH_URL_SECRET}/", include('django.contrib.auth.urls')),
+    re_path(r'^\.well-known/', include('letsencrypt.urls')),
 ]
