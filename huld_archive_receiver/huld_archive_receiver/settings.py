@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "receiver.apps.ReceiverConfig",
     'letsencrypt',
+    'mod_wsgi.server',
 ]
 
 MIDDLEWARE = [
