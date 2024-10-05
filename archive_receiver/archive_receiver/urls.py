@@ -1,4 +1,4 @@
-"""huld_archive_receiver URL Configuration
+"""archive_receiver URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.urls import include, path, re_path
 
-from huld_archive_receiver.settings import AUTH_URL_SECRET
+from archive_receiver.settings import AUTH_URL_SECRET
 
 urlpatterns = [
     path("", include("receiver.urls")),
-    path(f"{AUTH_URL_SECRET}/", include('django.contrib.auth.urls')),
-    re_path(r'^\.well-known/', include('letsencrypt.urls')),
+    path(f"{AUTH_URL_SECRET}/", include("django.contrib.auth.urls")),
+    re_path(r"^\.well-known/", include("letsencrypt.urls")),
 ]

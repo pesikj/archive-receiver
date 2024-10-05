@@ -19,7 +19,7 @@ https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
 2. Create `.env` file.
 3. Create virtual environment in the directory with the cloned project.
 4. Activate virtual environment: `PS C:\web\asvv> .\env\Scripts\activate`
-5. Go to the `huld_archive_receiver` subfolder `(env) PS C:\web\asvv> cd .\asvv\` and install requirements by `pip install -r requirements.txt`.
+5. Go to the `archive_receiver` subfolder `(env) PS C:\web\asvv> cd .\asvv\` and install requirements by `pip install -r requirements.txt`.
 6. Run database migration: `python .\manage.py migrate`
 7. Create admin user: `python .\manage.py createsuperuser`
 
@@ -69,15 +69,15 @@ Add a following lines to the `C:\xampp\apache\conf\extra\httpd-vhosts.conf` file
     WSGIPassAuthorization On
     ErrorLog "logs/asvv.error.log"
     CustomLog "logs/asvv.access.log" combined
-    WSGIScriptAlias /  "C:/web/huld_archive_receiver/huld_archive_receiver/huld_archive_receiver/wsgi.py"
-    <Directory "C:/web/huld_archive_receiver/huld_archive_receiver/huld_archive_receiver/">
+    WSGIScriptAlias /  "C:/web/archive_receiver/archive_receiver/archive_receiver/wsgi.py"
+    <Directory "C:/web/archive_receiver/archive_receiver/archive_receiver/">
         <Files wsgi.py>
             Require all granted
         </Files>
     </Directory>
 
-    Alias /static "C:/web/huld_archive_receiver/huld_archive_receiver/huld_archive_receiver/static"
-    <Directory "C:/web/huld_archive_receiver/huld_archive_receiver/huld_archive_receiver/static">
+    Alias /static "C:/web/archive_receiver/archive_receiver/archive_receiver/static"
+    <Directory "C:/web/archive_receiver/archive_receiver/archive_receiver/static">
         Require all granted
     </Directory>  
 </VirtualHost>
