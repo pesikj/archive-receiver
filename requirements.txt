@@ -1,7 +1,6 @@
 Django==5.1.1
 python-decouple==3.8
 django-letsencrypt==4.1.0
-
 pre-commit==4.0.0
 isort==5.13.2
 black==24.8.0
