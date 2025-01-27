@@ -1,4 +1,4 @@
-Django==5.1.4
+Django==5.1.5
 python-decouple==3.8
 django-letsencrypt==4.1.0
 pre-commit==4.1.0
